@@ -92,7 +92,6 @@ module.exports = {
 
   async removeItem(req, res, db) {
     const ownerId = req?.requester?.id;
-    data.user_id = ownerId;
     const { id, item_id } = req?.params;
 
     const list = await db('list').where({ id, user_id: ownerId }).first();
